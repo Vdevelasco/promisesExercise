@@ -1,5 +1,7 @@
 # Promesas y Async/Await
 Esta es una página simple que devuleve requests hechas a una api de pokemon
+## Link
+https://vdevelasco.github.io/promisesExercise/
 ## Funcionamiento
 ### HTML
 La estructura de la página es muy sencilla, un contenedor con un header, una imagen, un cuerpo de texto y un botón
