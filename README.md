@@ -14,6 +14,9 @@ El css estiliza ligeramente el botón y centra la estructura de la página
 - Hay un código al final que se encarga de cargar un pokemon la primera vez que se ejecute el código de la página
 
 En caso de que no se pueda conectar a la API se recibirá por consola el siguiente error: "Failed to connect to the API"
+
 En caso de que no se pueda encontrar un pokémon se recibirá por consola el siguiente error: "Failed to fetch a Pokémon from the API"
+
 Los dos casos anteriores corresponden a fallos dentro de la función "getRandomPokemon"
+
 En caso de que haya algún error llamando a ésta función se imprimirá el mensaje "Error fetching data. Please try again later."
