@@ -14,7 +14,8 @@ const getRandomPokemon = async () => {
                     }
                     resolve(response.json());
                 })});
-        const randomPokemonId = Math.floor(Math.random() * data.results.length) + 1;
+        const userText = document.getElementById('pokemon-id').value;
+        const randomPokemonId = Number(userText);
         const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`).then(console.log('Succesfully connected to the Pokémon API'));
         if (!pokemonResponse.ok) {
             throw new Error('Failed to fetch Pokémon data');
@@ -41,9 +42,6 @@ const fetchData = async () => {
         displayData(imageUrl, name);
     } catch (error) {
         console.error(error.message);
-        alert('Error fetching data. Please try again later.');
+        alert('Error fetching data, couldn\'t find a pokemon with that ID.');
     }
 }
-
-// Llamada inicial para cargar un Pokémon al cargar la página
-window.onload = fetchData;
