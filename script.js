@@ -1,6 +1,6 @@
 // Función para obtener un Pokémon aleatorio
 "use strict";
-const getRandomPokemon = async () => {
+const getPokemon = async () => {
         const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
         if (!response.ok) {
             throw new Error('Failed to fetch Pokémon');
@@ -38,7 +38,7 @@ const displayData = (imageUrl, name) => {
 // Función principal para manejar el clic del botón y mostrar el Pokémon
 const fetchData = async () => {
     try {
-        const { imageUrl, name } = await getRandomPokemon();
+        const { imageUrl, name } = await getPokemon();
         displayData(imageUrl, name);
     } catch (error) {
         console.error(error.message);
