@@ -6,6 +6,14 @@ const getRandomPokemon = async () => {
             throw new Error('Failed to fetch Pokémon');
         }
         const data = await response.json();
+        new Promise((resolve, reject) => {
+            fetch('https://pokeapi.co/api/v2/pokemon/')
+                .then(response => {
+                    if (!response.ok) {
+                        reject(new Error('Failed to fetch Pokémon'));
+                    }
+                    resolve(response.json());
+                })});
         const randomPokemonId = Math.floor(Math.random() * data.results.length) + 1;
         const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`).then(console.log('Succesfully connected to the Pokémon API'));
         if (!pokemonResponse.ok) {
